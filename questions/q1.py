@@ -22,7 +22,7 @@ def response(responses, answers, choices):
                 set(
                     random.choices(
                         choices,
-                        [10, 9, 8, 1, 2, 2, 7, 6, 3, 1, 2],
+                        [11, 10, 9, 2, 4, 3, 8, 6, 5, 7, 1],  # 16-20 years old
                         k=answers[i],
                     )
                 )

@@ -6,7 +6,7 @@ def answers():
 
 
 def response(responses, answers):
-    return random.choices(answers, [9, 7, 1], k=responses)
+    return random.choices(answers, [9, 7, 3], k=responses)
 
 
 def xpath(web):

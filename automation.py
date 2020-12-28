@@ -6,7 +6,7 @@ from questions import q1, q2, q3, q4, q5, q6, q7
 
 # setting
 time_sleep = 2
-responses = 14
+responses = 31
 
 # url
 web = webdriver.Chrome("C:/ProgramData/chocolatey/bin/chromedriver.exe")
@@ -22,17 +22,18 @@ gender_choices = [0, 1, 2]
 gender_responses = random.choices(gender_choices, [11, 9, 1], k=responses)
 
 # age
-age_choices = [13, 14, 15]
-age_responses = random.choices(age_choices, [3, 5, 9], k=responses)
+# age_choices = [13, 14, 15]
+age_choices = [16, 17, 18, 19, 20]
+age_responses = random.choices(age_choices, [3, 5, 9, 4, 2], k=responses)
 
 # provinces
 province_choices = [
     "กระบี่",
     "ชุมพร",
-    "นครศรีธรรมราช",
     "พัทลุง",
     "สงขลา",
     "สุราษฎร์ธานี",
+    "นครศรีธรรมราช",
 ]
 province_responses = random.choices(province_choices, [1, 2, 5, 4, 3, 6], k=responses)
 
@@ -96,9 +97,11 @@ for i in range(responses):
     province_xpath = web.find_element_by_xpath(
         '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input'
     )
-    province_xpath.send_keys(province_responses[i])
+    # province_xpath.send_keys(province_responses[i])
+    province_xpath.send_keys("สงขลา")
 
     # Q1
+    time.sleep(time_sleep)
     q1_xpath = q1.xpath(web)
     for j in range(len(q1_response[i])):
         for k in range(len(q1_xpath)):
@@ -125,6 +128,7 @@ for i in range(responses):
     q4_xpath.send_keys(q4_reponse[i])
 
     # next
+    time.sleep(time_sleep)
     next_button = web.find_element_by_xpath(
         '//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div/div/span/span'
     )
@@ -155,6 +159,7 @@ for i in range(responses):
                 q7_xpath[k].click()
 
     # submit
+    time.sleep(time_sleep)
     submit_button = web.find_element_by_xpath(
         '//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div/div[2]/span'
     )
@@ -165,6 +170,8 @@ for i in range(responses):
         "/html/body/div[1]/div[2]/div[1]/div/div[4]/a"
     )
     another_response.click()
+
+    print("สงขลา", i + 1)
 
 # close
 web.close()
