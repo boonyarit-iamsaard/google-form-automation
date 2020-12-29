@@ -24,7 +24,7 @@ gender_responses = random.choices(gender_choices, [11, 9, 1], k=responses)
 # age
 # age_choices = [13, 14, 15]
 age_choices = [16, 17, 18, 19, 20]
-age_responses = random.choices(age_choices, [3, 5, 9, 4, 2], k=responses)
+age_responses = random.choices(age_choices, [3, 5, 9, 5, 4], k=responses)
 
 # provinces
 province_choices = [
